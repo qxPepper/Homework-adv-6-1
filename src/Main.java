@@ -8,12 +8,13 @@ public class Main {
         // Нет использования состояния.
         // Определяются не изменяемые final-переменные byEsenin и list.
         final String byEsenin =
-                "тот кто видел хоть однажды этот край и эту гладь тот почти берёзке каждой ножку рад поцеловать";
+                "тот кто видел хоть однажды этот край и эту гладь гладь гладь гладь тот почти берёзке каждой ножку рад поцеловать";
         final List<String> list = Arrays.asList(byEsenin.split(" "));
 
         // Определяется реализация функционального интерфейса Function.
         // С помощью монад, используя Stream API, функция очищается.
         Function<List<String>, List<String>> myFunction = source -> source.stream()
+                .distinct()
                 .sorted()
                 .collect(Collectors.toList());
 
